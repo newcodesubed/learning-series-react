@@ -6,6 +6,7 @@ function App() {
     let time = new Date().toLocaleTimeString().replace(/AM|PM/,'') ;
     setTime(time)
   }
+  setInterval(currentTime,1000);
 
   return (
     <div className="container">
