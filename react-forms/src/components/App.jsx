@@ -14,20 +14,23 @@ function App() {
     
   }
   //after click what must be done?
-  function submitHandler(){
+  function submitHandler(event){
     //name is an standar "COntrolled Components" 
     setPrintName(name);
+//to remove the default feature of form to refreh every time it submit.
+    event.preventDefault();
   }
   return (
     <div className="container">
       <h1>Hello {printName} </h1>
+      <form onSubmit={submitHandler}></form>
       <input 
         type="text" 
         placeholder="What's your name?"
         onChange={handleInput}
         value={name}
       />
-      <button onClick={submitHandler}>Submit</button>
+      <button type="submit">Submit</button>
       
     </div>
   );
