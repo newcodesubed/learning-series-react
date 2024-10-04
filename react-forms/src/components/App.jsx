@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="container">
       <h1>Hello {printName} </h1>
-      <form onSubmit={submitHandler}></form>
+      <form onSubmit={submitHandler}>
       <input 
         type="text" 
         placeholder="What's your name?"
@@ -31,7 +31,7 @@ function App() {
         value={name}
       />
       <button type="submit">Submit</button>
-      
+      </form>
     </div>
   );
 }
