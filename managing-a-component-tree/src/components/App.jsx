@@ -31,8 +31,10 @@ function App() {
       </div>
       <div>
         <ul>
+      {/* item baneko array [] ma bako item ho so teslai cahi maap garnu parne ho */}
           {items.map(toDoItem => (
             <List 
+            //when passing props you must send data in {}
             text={toDoItem}/>
           ))}
         </ul>
