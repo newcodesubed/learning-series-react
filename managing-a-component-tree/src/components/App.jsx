@@ -18,6 +18,17 @@ function App() {
     setInputText("");
   }
 
+  function deleteItem(id){
+    setItems(prevItems=>{
+      return prevItems.filter(
+        (items, index)=> {
+          return index !== id;
+        }
+      )
+
+    })
+  }
+
   return (
     <div className="container">
       <div className="heading">
@@ -32,10 +43,17 @@ function App() {
       <div>
         <ul>
       {/* item baneko array [] ma bako item ho so teslai cahi maap garnu parne ho */}
-          {items.map(toDoItem => (
+      {/* deleteItem banneko kura maile main ma create gareko chu so teslai maile
+      aba list banne component ma pass garerw activate garaudai chu  */}
+          {items.map((toDoItem, index) => (
             <List 
             //when passing props you must send data in {}
-            text={toDoItem}/>
+            key={index}
+            id = {index}
+            text={toDoItem} 
+            onChecked={deleteItem}
+            
+            />
           ))}
         </ul>
       </div>
